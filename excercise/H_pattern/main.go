@@ -5,9 +5,9 @@ import (
 )
 
 func main() {
-	segitiga()
+	pattern()
 }
-func segitiga() {
+func pattern() {
 	for x := 1; x <= 5; x++ {
 		for y := 5; y >= x; y-- {
 			if y == 5 || y == 1 {
