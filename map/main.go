@@ -1,17 +1,41 @@
 package main
 
-import "log"
+import (
+	"fmt"
+)
 
 func main() {
-	var month = map[string]int{"januari": 30, "febuari": 28, "maret": 30}
-	log.Println(month["januari"])
+	// membuat map
+	hero := map[string]string{
+		"name": "Phantom",
+		"type": "Agility",
+	}
 
-	for index, val := range month {
-		log.Println(index+" : ", val)
-	}
-	delete(month, "januari")
-	var value, isExist = month["januari"]
-	if isExist {
-		log.Println(value)
-	}
+	fmt.Println(hero)
+
+	// mengubah/ menambahkan data di map dengan key
+	hero["level"] = "1"
+	fmt.Println(hero)
+
+	// Menampilkan data di map dengan key
+	fmt.Println(hero["name"])
+	fmt.Println(hero["type"])
+
+	// Melihat jumlah data di map
+	fmt.Println(len(hero))
+
+	// Membuat map baru
+	status := make(map[string]int)
+	status["HP"] = 30
+	status["MP"] = 100
+	status["Exp"] = 1350
+	fmt.Println(status)
+
+	// Menghapus data di map dengan key
+	fmt.Println("=========================")
+	delete(hero, "type")
+	delete(status, "Exp")
+
+	fmt.Println(hero)
+	fmt.Println(status)
 }

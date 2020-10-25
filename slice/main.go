@@ -1,35 +1,37 @@
 package main
 
-import "log"
+import "fmt"
 
 func main() {
-	var cars = []string{"BMW", "TOYOTA", "HONDA", "YAMAHA"}
+	// kurung buka tutup dengan "..." dan angka merupakan array
+	var month = [...]string{"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"}
+	// sedangkan kurung dengan isi kosong "( []string{"bla","bblab"} )"adalah slice
 
-	log.Println(cars[0])
+	// Memilih potongan array dari index ke 4 hingga sebelum 7
+	var slice1 = month[4:7]
+	fmt.Println(slice1)
 
-	var name = "bambang pamungkas"
-	log.Println(name[8:])
-	log.Println(name[:7])
-	log.Println(name[5:11])
+	// merubah array
+	month[5] = "Diubah"
+	fmt.Println(month)
+	fmt.Println(slice1)
 
-	carsitem := cars[:2]
+	// merubah isi slice = merubah data array
+	slice1[0] = "Loncat"
+	fmt.Println(month)
+	fmt.Println(slice1)
 
-	log.Println(carsitem)
-	log.Println(len(carsitem))
-	log.Println(cap(carsitem))
+	// Melihat kapasitas array
+	fmt.Println(cap(slice1))
 
-	carsitem = append(carsitem, "DAIHATSU")
+	fmt.Println("panjang array slice1 adalah", len(slice1))
+	fmt.Println("panjang array month adalah", len(month))
 
-	log.Println(carsitem)
-	log.Println(len(carsitem))
-	log.Println(cap(carsitem))
-	log.Println(cars)
+	var slice2 = month[10:]
+	fmt.Println(slice2)
 
-	var new = []string{"omama"}
-	var newL = []string{"olala", "balala"}
-
-	newAll := copy(newL, new)
-	log.Println(new)
-	log.Println(newL)
-	log.Println(newAll)
+	var slice3 = append(slice2, "Eko")
+	fmt.Println(slice3)
+	slice3[1] = "Bukan Desember"
+	fmt.Println(slice3)
 }
