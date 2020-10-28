@@ -3,33 +3,57 @@ package main
 import "fmt"
 
 func main() {
-	// normal for
-	for i := 0; i < 10; i++ {
-		fmt.Println(i)
+	fmt.Println("================(js while)=================")
+	// for sperti while
+	counter := 1
+
+	for counter <= 10 {
+		fmt.Println("Perulangan ke", counter)
+		counter++
 	}
 
-	// for like while
-	var l = 0
-	for l < 10 {
-		fmt.Println(l)
-		l++
+	fmt.Println("================(normal for)=================")
+
+	// for dengan statement (seperti di js tapi ga pake ())
+	for counter := 0; counter <= 10; counter++ {
+		fmt.Println("Perulangan ke", counter)
 	}
 
-	// for infinity loop
-	var p = 0
-	for {
-		fmt.Println("angka: ", p)
+	fmt.Println("================( How to extract arr with for )=================")
 
-		if p == 5 {
-			break
-		}
-		p++
+	arr := []string{"Eko", "Kurniawan", "Khennedy"}
+
+	for i := 0; i < len(arr); i++ {
+		fmt.Println(arr[i])
 	}
 
-	// for like foreach
-	var items = []string{"olala", "omama", "balal", "lala"}
-	for index, k := range items {
-		fmt.Println(index)
-		fmt.Println(k)
+	fmt.Println("================(FOR Range)=================")
+
+	// untuk mengambil semua data (value & index) yang ada di array
+	// seperti foreach & map di javascript
+
+	character := []string{"Templar Assasin", "Invoker", "Litch", "Puck", "Dokter Witch"}
+
+	for index, value := range character {
+		fmt.Println("index ", index, " = ", value)
+	}
+
+	fmt.Println("==========")
+
+	// jika hanya salah satu variabel yg digunakan maka gantikan "_" di variabel tsb
+	tipe := []string{"Strength", "Agility", "Intelligent"}
+
+	for _, value := range tipe {
+		fmt.Println("Tipe ", value)
+	}
+
+	fmt.Println("=== for range untuk map ===")
+
+	hero := make(map[string]string)
+	hero["nama"] = "Saitama"
+	hero["hobi"] = "Main ps"
+
+	for key, value := range hero {
+		fmt.Println(key, "=", value)
 	}
 }
